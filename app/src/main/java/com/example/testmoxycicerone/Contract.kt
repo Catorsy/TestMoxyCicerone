@@ -9,10 +9,12 @@ class Contract {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
     interface View: MvpView {
-        fun setButtonOneText(text: String)
-        fun setButtonTwoText(text: String)
-        fun setButtonThreeText(text: String)
+        fun init()
+        fun updateList()
     }
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    interface MainView : MvpView
 
     abstract class Presenter: MvpPresenter<View>(){
 
