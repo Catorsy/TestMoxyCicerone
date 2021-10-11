@@ -2,12 +2,13 @@
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="#75F1F88D"
+        android:background="@color/middle_yellow"
+        android:layout_margin="@dimen/layout_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_fragment_view_users"
+            android:id="@+id/recycler_view_fragment_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false" />

@@ -18,7 +18,7 @@ class UsersRecyclerViewAdapter(private val presenter: UserListPresenter) :
             )
         ).apply {
             itemView.setOnClickListener {
-                presenter.itemClickListener?.invoke(this) //invoke вызывет лямбду. Еще он божет быть null
+                presenter.itemClickListener?.invoke(this) //invoke вызывет лямбду. Еще он может быть null
                 //presenter.itemClickListener?.invoke(holder) вызовет itemClickListener, если он не равен null.
             }
         }
@@ -36,13 +36,14 @@ class UsersRecyclerViewAdapter(private val presenter: UserListPresenter) :
         UserItemView {
 
         override fun setLogin(text: String) {
-            vb.userLogin.text = text
+            vb.userLoginTextView.text = text
         }
 
         override fun setUrl(text: String) {
-            vb.userUrl.text = text
+            vb.userUrlTextView.text = text
         }
 
         override var pos: Int = -1
+
     }
 }

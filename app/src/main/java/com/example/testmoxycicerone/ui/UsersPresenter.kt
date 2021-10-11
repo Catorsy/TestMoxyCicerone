@@ -27,15 +27,18 @@ class UsersPresenter(val userRepo: GithubUserRepo, val router: Router): MvpPrese
     }
 
     val usersListPresenter = UsersListPresenter()
+
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         router.replaceScreen(Screens.usersScreen())
         viewState.init()
         loadData()
-        //мб избавиться от этого
-        usersListPresenter.itemClickListener = { itemView -> //todo переход на экран пользователя, заготовка слушателя клика//
-        //todo router navigateTo будет тут }
-        }
+            //listen()
+    }
+
+    private fun listen() {
+        val users = userRepo.getUsers()
+        usersListPresenter.itemClickListener = { itemView -> router.navigateTo(Screens.userProfileScreen()) }
     }
 
     private fun loadData() {

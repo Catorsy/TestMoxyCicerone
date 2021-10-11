@@ -30,8 +30,8 @@ class UsersListFragment : MvpAppCompatFragment(), Contract.View, BackButtonListe
 
     override fun init() {
         adapter = UsersRecyclerViewAdapter(presenter.usersListPresenter)
-        binding.recyclerFragmentViewUsers.layoutManager = LinearLayoutManager(context)
-        binding.recyclerFragmentViewUsers.adapter = adapter
+        binding.recyclerViewFragmentUsers.layoutManager = LinearLayoutManager(context)
+        binding.recyclerViewFragmentUsers.adapter = adapter
     }
 
     override fun updateList() {
