@@ -1,7 +1,5 @@
 package com.example.testmoxycicerone.ui
 
-import android.app.Activity
-import android.widget.Toast
 import com.example.testmoxycicerone.Contract
 import com.example.testmoxycicerone.Screens
 import com.example.testmoxycicerone.interfaces.UserItemView

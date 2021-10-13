@@ -10,7 +10,7 @@ import moxy.ktx.moxyPresenter
 
 class MainActivity : MvpAppCompatActivity(), Contract.MainView {
     private lateinit var binding: ActivityMainBinding
-    private val presenter by moxyPresenter { MainPresenter(app.router) }
+    private val presenter by moxyPresenter { MainPresenter(App.router) }
     val navigator = AppNavigator(this, R.id.container)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,12 +21,12 @@ class MainActivity : MvpAppCompatActivity(), Contract.MainView {
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        App.INSTANCE.navigatorHolder.setNavigator(navigator)
+        App.navigatorHolder.setNavigator(navigator)
     }
 
     override fun onPause() {
         super.onPause()
-        App.INSTANCE.navigatorHolder.removeNavigator()
+        App.navigatorHolder.removeNavigator()
     }
 
     override fun onBackPressed() {
