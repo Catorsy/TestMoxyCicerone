@@ -1,3 +1,3 @@
 package com.example.testmoxycicerone.interfaces
 
-interface UserListPresenter: ListPresenter<UserItemView>
+interface UserListPresenter : ListPresenter<UserItemView>

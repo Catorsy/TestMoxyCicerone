@@ -21,9 +21,11 @@ class UsersListFragment : MvpAppCompatFragment(), Contract.View, BackButtonListe
     private val presenter by moxyPresenter { UsersPresenter(GithubUserRepo(), App.INSTANCE.router) }
     private lateinit var adapter: UsersRecyclerViewAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?) =
-        FragmentUsersListBinding.inflate(inflater, container, false).also{
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ) =
+        FragmentUsersListBinding.inflate(inflater, container, false).also {
             binding = it
         }.root
 

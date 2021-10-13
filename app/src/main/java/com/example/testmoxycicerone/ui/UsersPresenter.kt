@@ -1,5 +1,7 @@
 package com.example.testmoxycicerone.ui
 
+import android.app.Activity
+import android.widget.Toast
 import com.example.testmoxycicerone.Contract
 import com.example.testmoxycicerone.Screens
 import com.example.testmoxycicerone.interfaces.UserItemView
@@ -9,7 +11,8 @@ import com.example.testmoxycicerone.model.User
 import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 
-class UsersPresenter(val userRepo: GithubUserRepo, val router: Router): MvpPresenter<Contract.View>() {
+class UsersPresenter(val userRepo: GithubUserRepo, val router: Router) :
+    MvpPresenter<Contract.View>() {
 
     class UsersListPresenter : UserListPresenter {
         val users = mutableListOf<User>()
@@ -30,15 +33,15 @@ class UsersPresenter(val userRepo: GithubUserRepo, val router: Router): MvpPrese
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        router.replaceScreen(Screens.usersScreen())
         viewState.init()
         loadData()
-            //listen()
+        listen()
     }
 
     private fun listen() {
         val users = userRepo.getUsers()
-        usersListPresenter.itemClickListener = { itemView -> router.navigateTo(Screens.userProfileScreen()) }
+        usersListPresenter.itemClickListener =
+            { itemView -> router.navigateTo(Screens.userProfileScreen(users[itemView.pos].id)) }
     }
 
     private fun loadData() {

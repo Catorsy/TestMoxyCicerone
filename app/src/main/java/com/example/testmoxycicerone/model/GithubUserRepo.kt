@@ -2,14 +2,14 @@ package com.example.testmoxycicerone.model
 
 class GithubUserRepo {
     private val repositories = listOf(
-        User(null, "Jonny", null),
-        User(null, "Fred", "https://github.com"),
-        User(null, "Anna", null),
-        User(null, "Elise", "https://github.com"),
-        User(null, "John", null),
+        User(1234, "Jonny", null),
+        User(456, "Fred", "https://github.com"),
+        User(43, "Anna", null),
+        User(444, "Elise", "https://github.com"),
+        User(907, "John", null),
     )
 
-    fun getUsers() : List<User>{
+    fun getUsers(): List<User> {
         return repositories
     }
 }

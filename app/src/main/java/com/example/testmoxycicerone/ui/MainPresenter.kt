@@ -9,7 +9,7 @@ import com.example.testmoxycicerone.model.User
 import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 
-//сюда можем передавать либо репозиторий, либо роутер
+//сюда можем передавать репозиторий, роутер
 class MainPresenter(val router: Router) : MvpPresenter<Contract.MainView>() {
 
     override fun onFirstViewAttach() {
